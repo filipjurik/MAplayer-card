@@ -1,6 +1,7 @@
-{
+/*! MAplayer Card – language packs (loaded by maplayer-card.js). Add a language by adding an entry; missing keys fall back to English. */
+export default {
   "_meta": {
-    "description": "Language packs for maplayer-card. English is built into the card; add a language by adding an entry here. Missing keys fall back to English.",
+    "description": "Language packs for MAplayer Card. English is built into the card; add a language by adding an entry here. Missing keys fall back to English.",
     "version": 1
   },
   "languages": {
@@ -577,4 +578,4 @@
       }
     }
   }
-}
+};

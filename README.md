@@ -44,7 +44,7 @@ Designed for wall tablets (e.g. Kiosk Satellite), desktop dashboards and the Hom
 1. Create `/config/www/community/maplayer-card/` and copy these three files into it:
    - `maplayer-card-loader.js`
    - `maplayer-card.js`
-   - `maplayer-card-lang.json`
+   - `maplayer-card-lang.js`
 2. **Settings → Dashboards → ⋮ → Resources → Add resource**
    - URL: `/local/community/maplayer-card/maplayer-card-loader.js`
    - Type: **JavaScript Module**
@@ -91,7 +91,7 @@ All options are available in the visual editor.
 | `icon` | – | Button icon (button mode) |
 | `layout` | `auto` | `auto` (mobile layout below 600 px), `desktop`, `mobile` |
 | `language` | `auto` | `auto` (Home Assistant language), `en`, `sk`, `cs`, `de`, … |
-| `lang_url` | next to the card | URL of a custom language file |
+| `lang_url` | next to the card | URL of a custom language file (`.js` module with `export default {...}` or plain `.json`) |
 | `tabs` | all | Visible tabs: `search`, `artist`, `album`, `track`, `playlist`, `radio`, `podcast`, `audiobook` |
 | `default_tab` | first tab | Tab shown first |
 | `players` | all | Limit the player list |
@@ -159,7 +159,7 @@ If you name the service differently, set `ma_api_service` in the card.
 
 ## Languages
 
-English is built in. Other languages come from `maplayer-card-lang.json`. To add one, add a new language object (copy the `en` block, translate the values) and set `language: xx`, or send a pull request.
+English is built in. Other languages come from `maplayer-card-lang.js`. To add one, add a new language object (copy the `en` block, translate the values) and set `language: xx`, or send a pull request.
 
 ## Troubleshooting
 

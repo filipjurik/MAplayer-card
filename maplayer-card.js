@@ -10,7 +10,7 @@ const MA_CARD_VERSION = "1.0";
 
 /* =====================================================================
  *  i18n: English is built in (default). Other languages are loaded from the
- *  external file `maplayer-card-lang.json` (next to this file,
+ *  external file `maplayer-card-lang.js` (next to this file,
  *  or set `lang_url`). Language: `language: auto | en | sk | cs | de | ...`
  *  (auto = Home Assistant language).
  * ===================================================================== */
@@ -158,7 +158,7 @@ const EN = {
 
 // Loaded language packs (partial objects, missing keys fall back to English)
 const I18N = { packs: { en: {} }, names: { en: "English" }, rev: 0, loading: {} };
-const LANG_FILE = "maplayer-card-lang.json";
+const LANG_FILE = "maplayer-card-lang.js";
 
 function mergeStrings(base, over) {
   const out = { ...base };
@@ -206,11 +206,15 @@ function defaultLangUrl() {
 }
 
 // File format: { "languages": { "sk": { "name": "Slovenčina", "strings": { ... } }, ... } }
+// Default pack is a JS module (HACS only downloads .js files); a custom `lang_url` may be .json or .js.
 function loadLanguages(url) {
   const target = url || defaultLangUrl();
   if (I18N.loading[target]) return I18N.loading[target];
-  I18N.loading[target] = fetch(target, { cache: "no-cache" })
-    .then((r) => (r.ok ? r.json() : null))
+  const isJson = /\.json(\?|$)/i.test(target);
+  const fetchPack = isJson
+    ? fetch(target, { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null))
+    : import(`${target}${target.includes("?") ? "&" : "?"}t=${Date.now()}`).then((m) => m.default);
+  I18N.loading[target] = fetchPack
     .then((data) => {
       const langs = data && (data.languages || data);
       if (!langs || typeof langs !== "object") return;
