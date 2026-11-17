@@ -1,12 +1,12 @@
 /*!
- * Music Assistant Browser Card  v1.20.3
+ * Music Assistant Player Card  v1.20.4
  * Custom Lovelace card (button + dialog, or inline) for Home Assistant.
  * Browse your Music Assistant library and play on the selected player.
  *
  * Resource: /local/music-assistant-browser-card.js  (typ: JavaScript Module)
  */
 
-const MA_CARD_VERSION = "1.20.3";
+const MA_CARD_VERSION = "1.20.4";
 
 /* =====================================================================
  *  i18n: English is built in (default). Other languages are loaded from the
@@ -3131,13 +3131,13 @@ customElements.define("music-assistant-browser-card-editor", MusicAssistantBrows
 window.customCards = window.customCards || [];
 window.customCards.push({
   type: "music-assistant-browser-card",
-  name: "Music Assistant Browser",
+  name: "Music Assistant Player Card",
   description: "Browse your Music Assistant library (artists, albums, tracks, playlists, radio…) and play on any player.",
   preview: false,
 });
 
 console.info(
-  `%c MUSIC-ASSISTANT-BROWSER-CARD %c v${MA_CARD_VERSION} `,
+  `%c MUSIC-ASSISTANT-PLAYER-CARD %c v${MA_CARD_VERSION} `,
   "color:#fff;background:#03a9f4;font-weight:700;",
   "color:#03a9f4;background:#fff;font-weight:700;"
 );

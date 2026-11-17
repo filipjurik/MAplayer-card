@@ -1,4 +1,4 @@
-# Music Assistant Browser Card
+# Music Assistant Player Card
 
 A custom Lovelace card for [Home Assistant](https://www.home-assistant.io/) that lets you browse and play everything in your [Music Assistant](https://music-assistant.io/) library, on any player, from a single card.
 
@@ -34,7 +34,7 @@ Designed for wall tablets (e.g. Kiosk Satellite), desktop dashboards and the Hom
 
 1. HACS → three-dot menu → **Custom repositories**
 2. Add `https://github.com/filipjurik/music-assistant-browser-card`, category **Dashboard** (Plugin)
-3. Install **Music Assistant Browser Card**
+3. Install **Music Assistant Player Card**
 4. Make sure the resource is registered (HACS normally does this):
    - URL: `/hacsfiles/music-assistant-browser-card/music-assistant-browser-card-loader.js`
    - Type: **JavaScript Module**
@@ -54,7 +54,7 @@ Designed for wall tablets (e.g. Kiosk Satellite), desktop dashboards and the Hom
 
 ## Usage
 
-Add a card in the UI editor (**Music Assistant Browser**) or in YAML:
+Add a card in the UI editor (**Music Assistant Player Card**) or in YAML:
 
 ```yaml
 type: custom:music-assistant-browser-card
@@ -161,7 +161,7 @@ English is built in. Other languages come from `music-assistant-browser-card-lan
 
 ## Troubleshooting
 
-- **"Custom element doesn't exist" / "Configuration error"** – the resource is not loaded. Check the resource URL (loader file, type *JavaScript Module*), that all three files are in the same folder, and that `music-assistant-browser-card.js` starts with `/*! Music Assistant Browser Card v…` and is about 120 kB (a corrupted upload is the usual cause). Then clear the browser/app cache.
+- **"Custom element doesn't exist" / "Configuration error"** – the resource is not loaded. Check the resource URL (loader file, type *JavaScript Module*), that all three files are in the same folder, and that `music-assistant-browser-card.js` starts with `/*! Music Assistant Player Card v…` and is about 120 kB (a corrupted upload is the usual cause). Then clear the browser/app cache.
 - **Changes not visible after an update** – hard-refresh; in the iPhone app use *Settings → Companion App → Debugging → Reset frontend cache*.
 - **401 from favorites/playlists** – the token is wrong or the `Authorization` header is missing the `Bearer ` prefix.
 - **Swiping the tab selectors changes the dashboard view** – this comes from the [Swipe Navigation](https://github.com/zanna-37/hass-swipe-navigation) integration. Exclude the view with `swipe_nav: skip_tabs: <view index>` in the dashboard's raw configuration.

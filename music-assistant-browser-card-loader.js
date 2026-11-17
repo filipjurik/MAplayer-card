@@ -1,5 +1,5 @@
 /*!
- * Music Assistant Browser Card – loader (v2)
+ * Music Assistant Player Card – loader (v2)
  * Register ONLY this file in Home Assistant resources (type: JavaScript Module), without ?v=…:
  *   /local/community/music-assistant-browser-card/music-assistant-browser-card-loader.js
  * It loads music-assistant-browser-card.js from the same folder. The file is revalidated with the
