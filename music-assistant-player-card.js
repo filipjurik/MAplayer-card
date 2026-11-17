@@ -3,14 +3,14 @@
  * Custom Lovelace card (button + dialog, or inline) for Home Assistant.
  * Browse your Music Assistant library and play on the selected player.
  *
- * Resource: /local/music-assistant-browser-card.js  (typ: JavaScript Module)
+ * Resource: /local/community/music-assistant-player-card/music-assistant-player-card-loader.js  (type: JavaScript Module)
  */
 
 const MA_CARD_VERSION = "1.0";
 
 /* =====================================================================
  *  i18n: English is built in (default). Other languages are loaded from the
- *  external file `music-assistant-browser-card-lang.json` (next to this file,
+ *  external file `music-assistant-player-card-lang.json` (next to this file,
  *  or set `lang_url`). Language: `language: auto | en | sk | cs | de | ...`
  *  (auto = Home Assistant language).
  * ===================================================================== */
@@ -158,7 +158,7 @@ const EN = {
 
 // Loaded language packs (partial objects, missing keys fall back to English)
 const I18N = { packs: { en: {} }, names: { en: "English" }, rev: 0, loading: {} };
-const LANG_FILE = "music-assistant-browser-card-lang.json";
+const LANG_FILE = "music-assistant-player-card-lang.json";
 
 function mergeStrings(base, over) {
   const out = { ...base };
@@ -192,7 +192,7 @@ function getStrings(cfgLang, hassLang) {
 }
 
 function defaultLangUrl() {
-  // the loader (music-assistant-browser-card-loader.js) tells us where the files live
+  // the loader (music-assistant-player-card-loader.js) tells us where the files live
   const base = globalThis.__MA_BROWSER_CARD_BASE__;
   if (base) return new URL(LANG_FILE, base).href;
   try {

@@ -33,20 +33,20 @@ Designed for wall tablets (e.g. Kiosk Satellite), desktop dashboards and the Hom
 ### HACS (custom repository)
 
 1. HACS → three-dot menu → **Custom repositories**
-2. Add `https://github.com/filipjurik/music-assistant-browser-card`, category **Dashboard** (Plugin)
+2. Add `https://github.com/filipjurik/music-assistant-player-card`, category **Dashboard** (Plugin)
 3. Install **Music Assistant Player Card**
 4. Make sure the resource is registered (HACS normally does this):
-   - URL: `/hacsfiles/music-assistant-browser-card/music-assistant-browser-card-loader.js`
+   - URL: `/hacsfiles/music-assistant-player-card/music-assistant-player-card-loader.js`
    - Type: **JavaScript Module**
 
 ### Manual
 
-1. Create `/config/www/community/music-assistant-browser-card/` and copy these three files into it:
-   - `music-assistant-browser-card-loader.js`
-   - `music-assistant-browser-card.js`
-   - `music-assistant-browser-card-lang.json`
+1. Create `/config/www/community/music-assistant-player-card/` and copy these three files into it:
+   - `music-assistant-player-card-loader.js`
+   - `music-assistant-player-card.js`
+   - `music-assistant-player-card-lang.json`
 2. **Settings → Dashboards → ⋮ → Resources → Add resource**
-   - URL: `/local/community/music-assistant-browser-card/music-assistant-browser-card-loader.js`
+   - URL: `/local/community/music-assistant-player-card/music-assistant-player-card-loader.js`
    - Type: **JavaScript Module**
 3. Hard-refresh the browser (or clear the app cache in the mobile app).
 
@@ -155,13 +155,15 @@ Favorites and playlist editing use the Music Assistant server API through a Home
 
 If you name the service differently, set `ma_api_service` in the card.
 
+> **Upgrading from an earlier build?** The files were renamed to `music-assistant-player-card*`. Update the resource URL accordingly. The card type stays `custom:music-assistant-browser-card`, so existing dashboards keep working.
+
 ## Languages
 
-English is built in. Other languages come from `music-assistant-browser-card-lang.json`. To add one, add a new language object (copy the `en` block, translate the values) and set `language: xx`, or send a pull request.
+English is built in. Other languages come from `music-assistant-player-card-lang.json`. To add one, add a new language object (copy the `en` block, translate the values) and set `language: xx`, or send a pull request.
 
 ## Troubleshooting
 
-- **"Custom element doesn't exist" / "Configuration error"** – the resource is not loaded. Check the resource URL (loader file, type *JavaScript Module*), that all three files are in the same folder, and that `music-assistant-browser-card.js` starts with `/*! Music Assistant Player Card v…` and is about 120 kB (a corrupted upload is the usual cause). Then clear the browser/app cache.
+- **"Custom element doesn't exist" / "Configuration error"** – the resource is not loaded. Check the resource URL (loader file, type *JavaScript Module*), that all three files are in the same folder, and that `music-assistant-player-card.js` starts with `/*! Music Assistant Player Card v…` and is about 120 kB (a corrupted upload is the usual cause). Then clear the browser/app cache.
 - **Changes not visible after an update** – hard-refresh; in the iPhone app use *Settings → Companion App → Debugging → Reset frontend cache*.
 - **401 from favorites/playlists** – the token is wrong or the `Authorization` header is missing the `Bearer ` prefix.
 - **Swiping the tab selectors changes the dashboard view** – this comes from the [Swipe Navigation](https://github.com/zanna-37/hass-swipe-navigation) integration. Exclude the view with `swipe_nav: skip_tabs: <view index>` in the dashboard's raw configuration.
