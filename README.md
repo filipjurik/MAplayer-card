@@ -4,7 +4,10 @@ A custom Lovelace card for [Home Assistant](https://www.home-assistant.io/) that
 
 Designed for wall tablets (e.g. Kiosk Satellite), desktop dashboards and the Home Assistant phone app.
 
-![Music Assistant Browser Card](docs/screenshot.png)
+<p>
+  <img src="docs/screenshot.png" alt="Desktop / tablet layout" width="620">
+  <img src="docs/screenshot-mobile.png" alt="Mobile layout" width="260">
+</p>
 
 ## Features
 
