@@ -167,6 +167,12 @@ English is built in. Other languages come from `music-assistant-browser-card-lan
 - **Swiping the tab selectors changes the dashboard view** – this comes from the [Swipe Navigation](https://github.com/zanna-37/hass-swipe-navigation) integration. Exclude the view with `swipe_nav: skip_tabs: <view index>` in the dashboard's raw configuration.
 - **"A panel can only show 1 card"** – put `style` inside the card config instead of adding it as a separate list item.
 
+## Support
+
+If you find this card useful, you can support its development.
+
+[![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-00457C?logo=paypal&logoColor=white)](https://paypal.me/fijur76)
+
 ## License
 
 [MIT](LICENSE)
