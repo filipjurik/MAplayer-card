@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "description": "Language packs for music-assistant-player-card. English is built into the card; add a language by adding an entry here. Missing keys fall back to English.",
+    "description": "Language packs for maplayer-card. English is built into the card; add a language by adding an entry here. Missing keys fall back to English.",
     "version": 1
   },
   "languages": {

@@ -1,5 +1,5 @@
 {
-  "name": "Music Assistant Player Card",
+  "name": "MAplayer Card",
   "render_readme": true,
-  "filename": "music-assistant-player-card-loader.js"
+  "filename": "maplayer-card-loader.js"
 }

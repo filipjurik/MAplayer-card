@@ -1,13 +1,13 @@
 /*!
- * Music Assistant Player Card – loader (v2)
+ * MAplayer Card – loader (v2)
  * Register ONLY this file in Home Assistant resources (type: JavaScript Module), without ?v=…:
- *   /local/community/music-assistant-player-card/music-assistant-player-card-loader.js
- * It loads music-assistant-player-card.js from the same folder. The file is revalidated with the
+ *   /local/community/maplayer-card/maplayer-card-loader.js
+ * It loads maplayer-card.js from the same folder. The file is revalidated with the
  * server on every start (unchanged file => 304); its ETag / Last-Modified becomes the cache key,
  * so after an update you only replace the files, never the resource entry.
  */
 const base = new URL(".", import.meta.url).href;
-const FILE = "music-assistant-player-card.js";
+const FILE = "maplayer-card.js";
 
 (async () => {
   if (customElements.get("music-assistant-browser-card")) return;
