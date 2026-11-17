@@ -4,6 +4,8 @@ A custom Lovelace card for [Home Assistant](https://www.home-assistant.io/) that
 
 Designed for wall tablets (e.g. Kiosk Satellite), desktop dashboards and the Home Assistant phone app.
 
+![Music Assistant Browser Card](docs/screenshot.png)
+
 ## Features
 
 - Browse and search players, radio, artists, albums, tracks, playlists, podcasts and audiobooks
