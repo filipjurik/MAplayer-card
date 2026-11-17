@@ -2370,11 +2370,11 @@ class MusicAssistantBrowserCard extends HTMLElement {
   }
 
   static getStubConfig() {
-    return { type: "custom:music-assistant-browser-card", mode: "inline", name: "Hudba" };
+    return { type: "custom:maplayer-card", mode: "inline", name: "Hudba" };
   }
 
   static getConfigElement() {
-    return document.createElement("music-assistant-browser-card-editor");
+    return document.createElement("maplayer-card-editor");
   }
 
   get S() {
@@ -2888,7 +2888,9 @@ class MusicAssistantBrowserCard extends HTMLElement {
   }
 }
 
-customElements.define("music-assistant-browser-card", MusicAssistantBrowserCard);
+customElements.define("maplayer-card", class extends MusicAssistantBrowserCard {});
+// legacy type, keeps existing dashboards working
+customElements.define("music-assistant-browser-card", class extends MusicAssistantBrowserCard {});
 
 /* =====================================================================
  *  Vizuálny editor karty
@@ -3117,7 +3119,7 @@ class MusicAssistantBrowserCardEditor extends HTMLElement {
       cfg.tabs = DEFAULT_TABS.filter((t) => cfg.tabs.includes(t));
       if (cfg.default_tab && !cfg.tabs.includes(cfg.default_tab)) delete cfg.default_tab;
     }
-    cfg.type = this._config.type || "custom:music-assistant-browser-card";
+    cfg.type = this._config.type || "custom:maplayer-card";
 
     const modeChanged =
       (cfg.mode || "inline") !== (this._config.mode || "inline") ||
@@ -3130,11 +3132,11 @@ class MusicAssistantBrowserCardEditor extends HTMLElement {
   }
 }
 
-customElements.define("music-assistant-browser-card-editor", MusicAssistantBrowserCardEditor);
+customElements.define("maplayer-card-editor", MusicAssistantBrowserCardEditor);
 
 window.customCards = window.customCards || [];
 window.customCards.push({
-  type: "music-assistant-browser-card",
+  type: "maplayer-card",
   name: "MAplayer Card",
   description: "Browse your Music Assistant library (artists, albums, tracks, playlists, radio…) and play on any player.",
   preview: false,

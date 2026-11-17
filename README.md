@@ -57,7 +57,7 @@ Designed for wall tablets (e.g. Kiosk Satellite), desktop dashboards and the Hom
 Add a card in the UI editor (**MAplayer Card**) or in YAML:
 
 ```yaml
-type: custom:music-assistant-browser-card
+type: custom:maplayer-card
 entity: media_player.living_room
 mode: inline
 tabs: [search, artist, album, track, playlist, radio]
@@ -71,7 +71,7 @@ In a panel view the card must be the only card. Put `style` inside the card's ow
 ```yaml
 type: picture-elements
 elements:
-  - type: custom:music-assistant-browser-card
+  - type: custom:maplayer-card
     entity: media_player.living_room
     anchor: top-left
     style:
@@ -155,7 +155,7 @@ Favorites and playlist editing use the Music Assistant server API through a Home
 
 If you name the service differently, set `ma_api_service` in the card.
 
-> **Upgrading from an earlier build?** The files were renamed to `maplayer-card*`. Update the resource URL accordingly. The card type stays `custom:music-assistant-browser-card`, so existing dashboards keep working.
+> **Upgrading from an earlier build?** The files were renamed to `maplayer-card*`. Update the resource URL accordingly. The card type is now `custom:maplayer-card`; the old type `custom:music-assistant-browser-card` still works as an alias, so existing dashboards keep working.
 
 ## Languages
 

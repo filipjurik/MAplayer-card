@@ -10,7 +10,7 @@ const base = new URL(".", import.meta.url).href;
 const FILE = "maplayer-card.js";
 
 (async () => {
-  if (customElements.get("music-assistant-browser-card")) return;
+  if (customElements.get("maplayer-card")) return;
   globalThis.__MA_BROWSER_CARD_BASE__ = base;
   let key = "";
   try {
